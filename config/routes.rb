@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :sessions, only: [:create]
       resources :registrations, only: [:create]
-      resources :complaints, only: [:create]
+      resources :complaints, only: [:create, :show, :index, :update]
     end
   end
 
