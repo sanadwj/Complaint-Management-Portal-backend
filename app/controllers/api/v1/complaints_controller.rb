@@ -35,7 +35,11 @@ module Api
       end
 
       def show
-        complaint = Complaint.find_by(params[:user_id])
+        complaint = Complaint.where(
+          user_id: params['id'])
+
+        # @current_user = User.find(params[:user_id])
+        # complaint = @current_user.complaint
         if complaint
           render json: {
             status: 200,
